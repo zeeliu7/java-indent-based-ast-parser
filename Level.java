@@ -1,30 +1,52 @@
-// Last update: Aug 4, 2023
+// Last update: Sep 8, 2023
+
+/////////////////////////////
+// 代码尚在完善过程中且未经测试 //
+/////////////////////////////
 
 import java.util.LinkedList;
 
 public class Level {
-    // 如果是第i个block，则开始行是blockStart.get(i)，结束行和type类似
-    private LinkedList<Integer> blockStart;
-    private LinkedList<Integer> blockEnd;
-    private LinkedList<String> blockTypes;
+    private LinkedList<Block> level;
+    private int levelId;
+    private int levelIndent;
+    private LinkedList<Line> plainLines;
 
-    public Level() {
-        this.blockStart = new LinkedList<>();
-        this.blockEnd = new LinkedList<>();
-        this.blockTypes = new LinkedList<>();
+    public Level(int levelId, int levelIndent, LinkedList<Line> plainLines) {
+        level = new LinkedList<>();
+        this.levelId = levelId;
+        this.levelIndent = levelIndent;
+        this.plainLines = plainLines;
     }
 
-    public void addBlock(int start, int end, String type) {
-        blockStart.add(start);
-        blockEnd.add(end);
-        blockTypes.add(type);
+    public void add(Block b) {level.add(b);}
+
+    public Block get(int index) {return level.get(index);}
+
+    public int size() {return level.size();}
+
+    public int getLevelId() {
+        return levelId;
     }
 
-    public int getStart(int index) {return (int) blockStart.get(index);}
+    public void setLevelId(int levelId) {
+        this.levelId = levelId;
+    }
 
-    public int getEnd(int index) {return (int) blockEnd.get(index);}
 
-    public String getType(int index) {return blockTypes.get(index);}
+    public int getLevelIndent() {
+        return levelIndent;
+    }
 
-    public int getSize() {return blockStart.size();}
+    public void setLevelIndent(int levelIndent) {
+        this.levelIndent = levelIndent;
+    }
+
+    public LinkedList<Line> getPlainLines() {
+        return plainLines;
+    }
+
+    public void setPlainLines(LinkedList<Line> plainLines) {
+        this.plainLines = plainLines;
+    }
 }
