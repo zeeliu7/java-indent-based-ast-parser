@@ -1,9 +1,3 @@
-// Last update: Sep 8, 2023
-
-/////////////////////////////
-// 代码尚在完善过程中且未经测试 //
-/////////////////////////////
-
 import java.io.*;
 import java.util.Collections;
 import java.util.HashSet;
