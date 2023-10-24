@@ -1,9 +1,3 @@
-// Last update: Sep 8, 2023
-
-/////////////////////////////
-// 代码尚在完善过程中且未经测试 //
-/////////////////////////////
-
 import java.util.LinkedList;
 
 public class Block {
